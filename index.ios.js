@@ -13,6 +13,8 @@ var {
 	TabBarIOS
 } = React;
 
+var Contracts = require( './contracts' );
+
 var Hitman = React.createClass( {
 	getInitialState: function() {
 		return {
@@ -30,7 +32,7 @@ var Hitman = React.createClass( {
 						selectedTab: 'list'
 					} ) } }
 				>
-					<View><Text>List Tab</Text></View>
+					<Contracts />
 				</TabBarIOS.Item>
 
 				<TabBarIOS.Item
