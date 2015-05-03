@@ -29,6 +29,7 @@ var Hitman = React.createClass( {
 				<TabBarIOS.Item
 					title="Contracts"
 					selected={ 'list' === this.state.selectedTab }
+					systemIcon='contacts'
 					onPress={ () => { this.setState( {
 						selectedTab: 'list'
 					} ) } }
@@ -45,6 +46,7 @@ var Hitman = React.createClass( {
 				<TabBarIOS.Item
 					title="Stats"
 					selected={ 'stats' === this.state.selectedTab }
+					systemIcon='history'
 					onPress={ () => { this.setState( {
 						selectedTab: 'stats'
 					} ) } }
