@@ -10,7 +10,8 @@ var {
 	StyleSheet,
 	Text,
 	View,
-	TabBarIOS
+	TabBarIOS,
+	NavigatorIOS
 } = React;
 
 var Contracts = require( './contracts' );
@@ -32,7 +33,13 @@ var Hitman = React.createClass( {
 						selectedTab: 'list'
 					} ) } }
 				>
-					<Contracts />
+					<NavigatorIOS
+						initialRoute={ {
+							component: Contracts,
+							title: 'Contracts'
+						} }
+						style={ styles.container }
+					/>
 				</TabBarIOS.Item>
 
 				<TabBarIOS.Item
@@ -51,10 +58,7 @@ var Hitman = React.createClass( {
 
 var styles = StyleSheet.create( {
 	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-		backgroundColor: '#F5FCFF',
+		flex: 1
 	}
 } );
 
