@@ -14,7 +14,8 @@ var {
 	NavigatorIOS
 } = React;
 
-var Contracts = require( './contracts' );
+var Contracts = require( './contracts' ),
+	AddContract = require( './add-contract' );
 
 var Hitman = React.createClass( {
 	getInitialState: function() {
@@ -35,9 +36,17 @@ var Hitman = React.createClass( {
 					} ) } }
 				>
 					<NavigatorIOS
+						ref='nav'
 						initialRoute={ {
 							component: Contracts,
-							title: 'Contracts'
+							title: 'Contracts',
+							rightButtonTitle: 'Add',
+							onRightButtonPress: () => {
+								this.refs.nav.navigator.push( {
+									title: 'Add Contract',
+									component: AddContract
+								} );
+							}
 						} }
 						style={ styles.container }
 					/>
